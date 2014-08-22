@@ -1,5 +1,8 @@
-﻿using TechTalk.SpecFlow;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 using TimeTracker.Specifications.Support;
+using TimeTracker.Specifications.Support.WebApplication;
 
 namespace TimeTracker.Specifications.Features.Steps
 {
@@ -9,43 +12,43 @@ namespace TimeTracker.Specifications.Features.Steps
         [Given(@"I am not authenticated")]
         public void GivenIAmNotAuthenticated()
         {
-            ScenarioContext.Current.Pending();
+            Logout();
         }
 
         [Given(@"I am authenticated with a known email addresses")]
         public void GivenIAmAuthenticatedWithAKnownEmailAddresses()
         {
-            ScenarioContext.Current.Pending();
+            Login();
         }
 
         [Given(@"I am authenticated with an unknown email addresses")]
         public void GivenIAmAuthenticatedWithAnUnknownEmailAddresses()
         {
-            ScenarioContext.Current.Pending();
+            Login("unknown-email-address@example.com");
         }
 
         [When(@"I goto any url")]
         public void WhenIGotoAnyUrl()
         {
-            ScenarioContext.Current.Pending();
+            GoToRelativeUrl("/");
         }
 
-        [Then(@"I am redirected to the sign in page")]
-        public void ThenIAmRedirectedToTheSignInPage()
+        [Then(@"I am redirected to the log in page")]
+        public void ThenIAmRedirectedToTheLogInPage()
         {
-            ScenarioContext.Current.Pending();
+            WebDriver.Url.Should().Be(GetFullUrl("/account/login"));
         }
 
         [Then(@"I can view the requested page")]
         public void ThenICanViewTheRequestedPage()
         {
-            ScenarioContext.Current.Pending();
+            WebDriver.Url.Should().Be(ExpectedUrl);
         }
 
-        [Then(@"the sign in page says I am an unknown user")]
-        public void ThenTheSignInPageSaysIAmAnUnknownUser()
+        [Then(@"the log in page says I am an unknown user")]
+        public void ThenTheLogInPageSaysIAmAnUnknownUser()
         {
-            ScenarioContext.Current.Pending();
+            WebDriver.FindElement(By.Id("unknown-user")).Displayed.Should().BeTrue();
         }
     }
 }

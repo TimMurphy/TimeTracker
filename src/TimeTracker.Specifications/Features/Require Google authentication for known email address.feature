@@ -6,7 +6,7 @@
 Scenario: Not authenticated
 	Given I am not authenticated
 	When I goto any url
-	Then I am redirected to the sign in page
+	Then I am redirected to the log in page
 
 Scenario: Authenticated with known email address
 	Given I am authenticated with a known email addresses
@@ -16,6 +16,6 @@ Scenario: Authenticated with known email address
 Scenario: Authenticated with unknown email address
 	Given I am authenticated with an unknown email addresses
 	When I goto any url
-	Then I am redirected to the sign in page
-	And the sign in page says I am an unknown user
+	Then I am redirected to the log in page
+	And the log in page says I am an unknown user
 

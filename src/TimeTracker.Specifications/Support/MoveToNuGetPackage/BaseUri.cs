@@ -13,6 +13,11 @@ namespace TimeTracker.Specifications.Support.MoveToNuGetPackage
             HTTPS = new Uri(https);
         }
 
+        public string FullUrl(string relativeUrl)
+        {
+            return FullUrl(relativeUrl, true);
+        }
+
         public string FullUrl(string relativeUrl, bool useHTTPS)
         {
             return (useHTTPS ? HTTPS.Combine(relativeUrl) : HTTP.Combine(relativeUrl)).ToString();
