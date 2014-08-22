@@ -100,6 +100,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HTTPS everywhere.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Require Google authentication for known email address.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Require Google authentication for known email address.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Steps\RequireGoogleAuthenticationForKnownEmailAddressSteps.cs" />
     <Compile Include="Support\BaseSteps.cs" />
     <Compile Include="Features\Steps\HTTPSEverywhereSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +124,10 @@
     <None Include="Features\HTTPS everywhere.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HTTPS everywhere.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Require Google authentication for known email address.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Require Google authentication for known email address.feature.cs</LastGenOutput>
     </None>
     <None Include="Packages.config" />
   </ItemGroup>
