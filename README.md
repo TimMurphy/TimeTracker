@@ -4,6 +4,10 @@ Keep track of your time with this simple web application.
 
 ## Projects
 
+### TimeTracker.WebApplication
+
+The user interface!
+
 ### TimeTracker.Specifications
 
 TimeTracker.Specifications contains a specification and end-to-end (system) test for every feature of the TimeTracker.WebApplication.
