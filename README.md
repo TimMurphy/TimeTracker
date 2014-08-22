@@ -2,6 +2,10 @@
 
 Keep track of your time with this simple web application.
 
+## Prerequisites
+
+- Configure IIS Express
+ 
 ## Projects
 
 ### TimeTracker.WebApplication
@@ -16,12 +20,15 @@ In other words. Have a new feature for TimeTracker.WebApplication? Add a specifi
 
 ## IIS Express Configuration
 
-If WebApplication testing with a network attached device is required (e.g. mobile testing) then see 
-[Scott Hanselman's](http://www.hanselman.com/blog/WorkingWithSSLAtDevelopmentTimeIsEasierWithIISExpress.aspx) excellent write up on how to do this. 
+TimeTracker.Specifications requires IIS Express to be configured so the WebApplication can be served via port 80 & 443. An added advantage is 
+WebApplication testing via a network attached device is possible. 
+
+See [Scott Hanselman's](http://www.hanselman.com/blog/WorkingWithSSLAtDevelopmentTimeIsEasierWithIISExpress.aspx) excellent write up on how to do this. 
 
 My brief instructions are as follows:
 
-**Run all commands from Administrator command prompt.**
+- Run all commands from Administrator command prompt.
+- Replace timmurphy2010 with your computer name.
 
     cd C:\Users\Tim
 

@@ -16,7 +16,7 @@ namespace TimeTracker.Specifications.Features.Steps
         [Then(@"I am redirected to the equivalent HTTPS url")]
         public void ThenIAmRedirectedToTheEquivalentHTTPSUrl()
         {
-            WebDriver.Url.Should().Be(ExpectedUrl.ToString(), "because the Web Application should only serve HTTPS urls");
+            WebDriver.Url.Should().Be(ExpectedUrl, "because the Web Application should only serve HTTPS urls");
         }
     }
 }

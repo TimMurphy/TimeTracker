@@ -1,17 +1,24 @@
-﻿using TimeTracker.Specifications.Support.MoveToNuGetPackage;
+﻿using System;
+using TimeTracker.Specifications.Support.MoveToNuGetPackage;
 
 namespace TimeTracker.Specifications.Support.WebApplication
 {
     public class WebApplicationManager : IWebApplicationManager
     {
         public WebApplicationManager()
+            : this(GetUrl("http"), GetUrl("https"))
+        {
+        }
+
+        private static string GetUrl(string protocol)
+        {
+            return string.Format("{0}://{1}/", protocol, Environment.MachineName);
+        }
+
+        public WebApplicationManager(string httpUrl, string httpsUrl)
             : this(
                 // todo: get website name from project file?
-                "TimeTracker.WebApplication",
-                // todo: get url from project file or iis express
-                "http://localhost:49700/",
-                // todo: get url from project file or iis express
-                "https://localhost:44301/")
+                "TimeTracker.WebApplication", httpUrl, httpsUrl)
         {
         }
 
