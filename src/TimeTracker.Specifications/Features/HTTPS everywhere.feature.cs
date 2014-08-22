@@ -34,8 +34,8 @@ namespace TimeTracker.Specifications.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "HTTPS everywhere", "In order to protect my information\nAs a user\nI want all pages to be served with H" +
-                    "TTPS", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "HTTPS everywhere", "In order to protect my information\r\nAs a user\r\nI want all pages to be served with" +
+                    " HTTPS", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
