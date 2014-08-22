@@ -2,12 +2,12 @@
 using OpenQA.Selenium;
 using SimpleBrowser.WebDriver;
 
-namespace TimeTracker.Specifications.Support
+namespace TimeTracker.Specifications.Support.WebApplication
 {
-    public class WebDriverManager
+    public class WebDriverManager : IWebDriverManager
     {
         private static readonly Lazy<IWebDriver> LazyInstance = new Lazy<IWebDriver>(() => new SimpleBrowserDriver());
- 
-        public static IWebDriver Instance { get { return LazyInstance.Value; } }
+
+        public IWebDriver Instance { get { return LazyInstance.Value; } }
     }
 }
