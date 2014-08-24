@@ -42,16 +42,17 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="CommandBus.cs" />
-    <Compile Include="CommandException.cs" />
-    <Compile Include="EventQueue.cs" />
-    <Compile Include="EventStore.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="ICommandBus.cs" />
-    <Compile Include="IDomainEvent.cs" />
-    <Compile Include="IEventStore.cs" />
-    <Compile Include="IEventQueue.cs" />
-    <Compile Include="Mapping.cs" />
+    <Compile Include="Commands\CommandBus.cs" />
+    <Compile Include="Commands\CommandBusExtensions.cs" />
+    <Compile Include="Commands\CommandException.cs" />
+    <Compile Include="Events\EventQueue.cs" />
+    <Compile Include="Events\EventStore.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandBus.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventStore.cs" />
+    <Compile Include="Events\IEventQueue.cs" />
+    <Compile Include="Support\Mapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
