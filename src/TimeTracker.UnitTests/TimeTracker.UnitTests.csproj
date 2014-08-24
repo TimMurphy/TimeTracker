@@ -83,6 +83,16 @@
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeTracker.Domain.Infrastructure\TimeTracker.Domain.Infrastructure.csproj">
+      <Project>{39c3b16d-2128-4c3d-9d75-3042c469e497}</Project>
+      <Name>TimeTracker.Domain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeTracker.Domain\TimeTracker.Domain.csproj">
+      <Project>{02be6a3e-673d-4044-933e-e668faad5322}</Project>
+      <Name>TimeTracker.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.24.0\build\Fody.targets" Condition="Exists('..\packages\Fody.1.24.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

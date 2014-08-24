@@ -9,5 +9,7 @@ namespace TimeTracker.Domain.Aggregates.Customer.Views
         {
             throw new NotImplementedException();
         }
+
+        public string Name { get; private set; }
     }
 }

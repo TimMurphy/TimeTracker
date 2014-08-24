@@ -1,9 +1,10 @@
-﻿using TimeTracker.Domain.ValueObjects;
+﻿using System;
 
 namespace TimeTracker.Domain.Aggregates.Customer.Views
 {
     public interface ICustomerViewRepository
     {
-        Id FindCustomerIdByName(string name);
+        Guid FindCustomerIdByName(string name);
+        CustomerView GetCustomer(Guid aggregateId);
     }
 }
