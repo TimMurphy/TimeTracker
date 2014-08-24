@@ -12,15 +12,15 @@ namespace TimeTracker.UnitTests.Domain.Aggregates.Steps
     public class CustomerAggregateSteps
     {
         private readonly ICommandBus Bus;
-        private readonly IQueue Queue;
+        private readonly IEventQueue EventQueue;
         private readonly IEventStore EventStore;
         private readonly ICustomerViewRepository CustomerViewRepository;
         private CreateCustomer Command;
 
-        public CustomerAggregateSteps(ICommandBus bus, IQueue queue, IEventStore eventStore, ICustomerViewRepository customerViewRepository)
+        public CustomerAggregateSteps(ICommandBus bus, IEventQueue eventQueue, IEventStore eventStore, ICustomerViewRepository customerViewRepository)
         {
             Bus = bus;
-            Queue = queue;
+            EventQueue = eventQueue;
             EventStore = eventStore;
             CustomerViewRepository = customerViewRepository;
         }
@@ -33,8 +33,8 @@ namespace TimeTracker.UnitTests.Domain.Aggregates.Steps
 
         private TCommand SendCommandAndProcessQueue<TCommand>(TCommand command) where TCommand : ICommand
         {
-            Bus.Send(Command);
-            Queue.Process();
+            Bus.Send(command);
+            EventQueue.Process();
 
             return command;
         }

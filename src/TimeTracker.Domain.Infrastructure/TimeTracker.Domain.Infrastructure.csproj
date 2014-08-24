@@ -42,12 +42,15 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="CommandBus.cs" />
     <Compile Include="CommandException.cs" />
+    <Compile Include="EventQueue.cs" />
+    <Compile Include="EventStore.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ICommandBus.cs" />
     <Compile Include="IDomainEvent.cs" />
     <Compile Include="IEventStore.cs" />
-    <Compile Include="IQueue.cs" />
+    <Compile Include="IEventQueue.cs" />
     <Compile Include="Mapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

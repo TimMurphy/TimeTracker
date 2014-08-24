@@ -2,7 +2,7 @@
 
 namespace TimeTracker.Domain.Infrastructure
 {
-    public interface IQueue
+    public interface IEventQueue
     {
         void Process();
         Task ProcessAsync();

@@ -71,6 +71,11 @@
     </Compile>
     <Compile Include="Domain\Aggregates\Steps\CustomerAggregateSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\CommandBus.cs" />
+    <Compile Include="Support\EventQueue.cs" />
+    <Compile Include="Support\EventStore.cs" />
+    <Compile Include="Support\IoC.cs" />
+    <Compile Include="Support\MemoryCustomerViewRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
