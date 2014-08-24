@@ -1,7 +1,7 @@
 ﻿using System;
 using TimeTracker.Domain.Aggregates.Customer.Views;
 
-namespace TimeTracker.UnitTests.Support
+namespace TimeTracker.UnitTests.Support.Repositories
 {
     public class MemoryCustomerViewRepository : ICustomerViewRepository
     {

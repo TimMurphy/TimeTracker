@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeTracker.Domain.Infrastructure
+namespace TimeTracker.Domain.Infrastructure.Events
 {
     public class EventStore : IEventStore
     {

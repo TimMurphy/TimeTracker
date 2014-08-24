@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeTracker.Domain.Infrastructure
+namespace TimeTracker.Domain.Infrastructure.Support
 {
     public static class Mapping
     {

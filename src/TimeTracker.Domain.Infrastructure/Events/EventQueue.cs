@@ -1,15 +1,15 @@
 ﻿using System.Threading.Tasks;
 
-namespace TimeTracker.Domain.Infrastructure
+namespace TimeTracker.Domain.Infrastructure.Events
 {
-    public class CommandBus : ICommandBus
+    public class EventQueue : IEventQueue
     {
-        public void Send(ICommand command)
+        public void Process()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task SendAsync(ICommand command)
+        public Task ProcessAsync()
         {
             throw new System.NotImplementedException();
         }

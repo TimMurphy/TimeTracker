@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
-using TimeTracker.Domain.Infrastructure;
 
-namespace TimeTracker.UnitTests.Support
+namespace TimeTracker.Domain.Infrastructure.Commands
 {
     public class CommandBus : ICommandBus
     {

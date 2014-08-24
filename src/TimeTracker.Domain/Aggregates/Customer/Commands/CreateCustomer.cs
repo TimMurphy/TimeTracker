@@ -1,5 +1,5 @@
 using System;
-using TimeTracker.Domain.Infrastructure;
+using TimeTracker.Domain.Infrastructure.Commands;
 
 namespace TimeTracker.Domain.Aggregates.Customer.Commands
 {

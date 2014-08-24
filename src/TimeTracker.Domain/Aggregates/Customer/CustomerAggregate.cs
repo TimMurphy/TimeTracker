@@ -4,6 +4,8 @@ using TimeTracker.Domain.Aggregates.Customer.Events;
 using TimeTracker.Domain.Aggregates.Customer.Exceptions;
 using TimeTracker.Domain.Aggregates.Customer.Views;
 using TimeTracker.Domain.Infrastructure;
+using TimeTracker.Domain.Infrastructure.Events;
+using TimeTracker.Domain.Infrastructure.Support;
 
 namespace TimeTracker.Domain.Aggregates.Customer
 {
@@ -18,7 +20,7 @@ namespace TimeTracker.Domain.Aggregates.Customer
 
         public string Name { get; private set; }
 
-        public IEnumerable<IDomainEvent> Receive(CreateCustomer command)
+        public IEnumerable<IEvent> Receive(CreateCustomer command)
         {
             var customerId = CustomerViewRepository.FindCustomerIdByName(command.Name);
 

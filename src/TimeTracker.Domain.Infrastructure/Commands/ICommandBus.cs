@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace TimeTracker.Domain.Infrastructure
+namespace TimeTracker.Domain.Infrastructure.Commands
 {
     public interface ICommandBus
     {

@@ -1,7 +1,9 @@
 ﻿using BoDi;
 using TechTalk.SpecFlow;
 using TimeTracker.Domain.Aggregates.Customer.Views;
-using TimeTracker.Domain.Infrastructure;
+using TimeTracker.Domain.Infrastructure.Commands;
+using TimeTracker.Domain.Infrastructure.Events;
+using TimeTracker.UnitTests.Support.Repositories;
 
 namespace TimeTracker.UnitTests.Support
 {
