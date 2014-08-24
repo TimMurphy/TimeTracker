@@ -46,7 +46,20 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Aggregates\Customer\Commands\CreateCustomer.cs" />
+    <Compile Include="Aggregates\Customer\Events\CreatedCustomer.cs" />
+    <Compile Include="Aggregates\Customer\CustomerAggregate.cs" />
+    <Compile Include="Aggregates\Customer\Exceptions\DuplicateCustomerNameException.cs" />
+    <Compile Include="Aggregates\Customer\Views\CustomerView.cs" />
+    <Compile Include="Aggregates\Customer\Views\ICustomerViewRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\Id.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeTracker.Domain.Infrastructure\TimeTracker.Domain.Infrastructure.csproj">
+      <Project>{39c3b16d-2128-4c3d-9d75-3042c469e497}</Project>
+      <Name>TimeTracker.Domain.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
