@@ -1,9 +1,9 @@
 ﻿using System;
 using TimeTracker.Domain.Aggregates.Customer.Views;
 
-namespace TimeTracker.UnitTests.Support.Repositories
+namespace TimeTracker.UnitTests.Support.Fakes.Repositories
 {
-    public class MemoryCustomerViewRepository : ICustomerViewRepository
+    public class FakeCustomerViewRepository : ICustomerViewRepository
     {
         public Guid FindCustomerIdByName(string name)
         {

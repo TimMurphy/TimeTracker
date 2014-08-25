@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TimeTracker.Domain.Infrastructure.Events
 {
     public interface IEventQueue
     {
-        void Process();
         Task ProcessAsync();
+        Task AddAsync(IEnumerable<IEvent> events);
     }
 }

@@ -11,22 +11,22 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TimeTracker.UnitTests.Domain_Infrastructure.Commands
+namespace TimeTracker.UnitTests.Domain_Infrastructure
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CommandBusFeature : Xunit.IUseFixture<CommandBusFeature.FixtureData>, System.IDisposable
+    public partial class CommandBus_SendAsyncFeature : Xunit.IUseFixture<CommandBus_SendAsyncFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CommandBus.feature"
+#line 1 "CommandBus.SendAsync.feature"
 #line hidden
         
-        public CommandBusFeature()
+        public CommandBus_SendAsyncFeature()
         {
             this.TestInitialize();
         }
@@ -34,7 +34,7 @@ namespace TimeTracker.UnitTests.Domain_Infrastructure.Commands
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CommandBus", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CommandBus.SendAsync", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,7 +63,7 @@ namespace TimeTracker.UnitTests.Domain_Infrastructure.Commands
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SetFixture(CommandBusFeature.FixtureData fixtureData)
+        public virtual void SetFixture(CommandBus_SendAsyncFeature.FixtureData fixtureData)
         {
         }
         
@@ -73,19 +73,37 @@ namespace TimeTracker.UnitTests.Domain_Infrastructure.Commands
         }
         
         [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "CommandBus")]
-        [Xunit.TraitAttribute("Description", "SendAsync")]
-        public virtual void SendAsync()
+        [Xunit.TraitAttribute("FeatureTitle", "CommandBus.SendAsync")]
+        [Xunit.TraitAttribute("Description", "Send command that has registered handler")]
+        public virtual void SendCommandThatHasRegisteredHandler()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SendAsync", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send command that has registered handler", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.When("SendAsync(ICommand command) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("command handler has been registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.Then("the command is processed by a registered command handler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("SendAsync(command) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
+ testRunner.Then("the command is processed by registered command handler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 7
  testRunner.And("the events returned by the command handler are added to the event queue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "CommandBus.SendAsync")]
+        [Xunit.TraitAttribute("Description", "Send command that does not have registered handler")]
+        public virtual void SendCommandThatDoesNotHaveRegisteredHandler()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send command that does not have registered handler", ((string[])(null)));
+#line 9
+this.ScenarioSetup(scenarioInfo);
+#line 10
+ testRunner.When("SendAsync(command) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("CommandHandlerNotFoundException is thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -97,12 +115,12 @@ this.ScenarioSetup(scenarioInfo);
             
             public FixtureData()
             {
-                CommandBusFeature.FeatureSetup();
+                CommandBus_SendAsyncFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CommandBusFeature.FeatureTearDown();
+                CommandBus_SendAsyncFeature.FeatureTearDown();
             }
         }
     }

@@ -3,7 +3,7 @@ using TechTalk.SpecFlow;
 using TimeTracker.Domain.Aggregates.Customer.Views;
 using TimeTracker.Domain.Infrastructure.Commands;
 using TimeTracker.Domain.Infrastructure.Events;
-using TimeTracker.UnitTests.Support.Repositories;
+using TimeTracker.UnitTests.Support.Fakes.Repositories;
 
 namespace TimeTracker.UnitTests.Support
 {
@@ -23,7 +23,7 @@ namespace TimeTracker.UnitTests.Support
             Container.RegisterTypeAs<CommandBus, ICommandBus>();
             Container.RegisterTypeAs<EventQueue, IEventQueue>();
             Container.RegisterTypeAs<EventStore, IEventStore>();
-            Container.RegisterTypeAs<MemoryCustomerViewRepository, ICustomerViewRepository>();
+            Container.RegisterTypeAs<FakeCustomerViewRepository, ICustomerViewRepository>();
         }
     }
 }

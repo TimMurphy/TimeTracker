@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TimeTracker.Domain.Infrastructure.Events
 {
@@ -10,6 +11,11 @@ namespace TimeTracker.Domain.Infrastructure.Events
         }
 
         public Task ProcessAsync()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task AddAsync(IEnumerable<IEvent> events)
         {
             throw new System.NotImplementedException();
         }

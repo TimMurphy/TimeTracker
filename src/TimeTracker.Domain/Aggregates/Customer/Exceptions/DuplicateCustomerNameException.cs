@@ -1,6 +1,6 @@
 ﻿using System;
 using TimeTracker.Domain.Aggregates.Customer.Commands;
-using TimeTracker.Domain.Infrastructure.Commands;
+using TimeTracker.Domain.Infrastructure.Commands.Exceptions;
 
 namespace TimeTracker.Domain.Aggregates.Customer.Exceptions
 {
