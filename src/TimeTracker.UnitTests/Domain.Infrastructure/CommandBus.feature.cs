@@ -23,7 +23,7 @@ namespace TimeTracker.UnitTests.Domain_Infrastructure
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CommandBus.RegisterCommandHandler.feature"
+#line 1 "CommandBus.feature"
 #line hidden
         
         public CommandBusFeature()
@@ -74,14 +74,14 @@ namespace TimeTracker.UnitTests.Domain_Infrastructure
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "CommandBus")]
-        [Xunit.TraitAttribute("Description", "Command handler has not been registered")]
-        public virtual void CommandHandlerHasNotBeenRegistered()
+        [Xunit.TraitAttribute("Description", "RegisterCommandHandler(commandHandler) - Command handler has not been registered")]
+        public virtual void RegisterCommandHandlerCommandHandler_CommandHandlerHasNotBeenRegistered()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Command handler has not been registered", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("RegisterCommandHandler(commandHandler) - Command handler has not been registered", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.When("RegisterCommandHandler(Func<TCommand, IEnumerable<IEvent>> action) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("RegisterCommandHandler(commandHandler) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 5
  testRunner.Then("the command handler is added to list of command handlers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -90,19 +90,54 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "CommandBus")]
-        [Xunit.TraitAttribute("Description", "Command handler has been registered")]
-        public virtual void CommandHandlerHasBeenRegistered()
+        [Xunit.TraitAttribute("Description", "RegisterCommandHandler(commandHandler) - Command handler has been registered")]
+        public virtual void RegisterCommandHandlerCommandHandler_CommandHandlerHasBeenRegistered()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Command handler has been registered", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("RegisterCommandHandler(commandHandler) - Command handler has been registered", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("a command handler has been registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("command handler has been registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("RegisterCommandHandler(Func<TCommand, IEnumerable<IEvent>> action) is called for " +
-                    "a second time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("RegisterCommandHandler(commandHandler) is called for a second time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
  testRunner.Then("DuplicateCommandHandlerException is thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "CommandBus")]
+        [Xunit.TraitAttribute("Description", "SendAsync(command) - Send command that has registered handler")]
+        public virtual void SendAsyncCommand_SendCommandThatHasRegisteredHandler()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SendAsync(command) - Send command that has registered handler", ((string[])(null)));
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 13
+ testRunner.Given("command handler has been registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.When("SendAsync(command) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("the command is processed by registered command handler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+ testRunner.And("the events returned by the command handler are added to the event queue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "CommandBus")]
+        [Xunit.TraitAttribute("Description", "SendAsync(command) - Send command that does not have registered handler")]
+        public virtual void SendAsyncCommand_SendCommandThatDoesNotHaveRegisteredHandler()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SendAsync(command) - Send command that does not have registered handler", ((string[])(null)));
+#line 18
+this.ScenarioSetup(scenarioInfo);
+#line 19
+ testRunner.When("SendAsync(command) is called", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then("CommandHandlerNotFoundException is thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
