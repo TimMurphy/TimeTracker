@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Domain\Aggregates\Steps\CustomerAggregateSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\Fakes\FakeEventStore.cs" />
     <Compile Include="Support\Fakes\Repositories\FakeRepository.cs" />
     <Compile Include="Support\IoC.cs" />
     <Compile Include="Support\Fakes\Repositories\FakeCustomerViewRepository.cs" />

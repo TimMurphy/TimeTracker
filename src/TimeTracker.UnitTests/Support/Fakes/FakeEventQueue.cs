@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TimeTracker.Domain.Infrastructure.Events;
 
@@ -16,6 +17,11 @@ namespace TimeTracker.UnitTests.Support.Fakes
         public Task ProcessAsync()
         {
             throw new System.NotImplementedException();
+        }
+
+        public void RegisterEventHandler(Action<IEvent> eventHandler)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<IEvent> AddedEvents { get { return AddedEventsField; } }

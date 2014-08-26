@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TimeTracker.Domain.Infrastructure.Events
@@ -7,5 +8,6 @@ namespace TimeTracker.Domain.Infrastructure.Events
     {
         Task AddAsync(IEnumerable<IEvent> events);
         Task ProcessAsync();
+        void RegisterEventHandler(Action<IEvent> eventHandler);
     }
 }
