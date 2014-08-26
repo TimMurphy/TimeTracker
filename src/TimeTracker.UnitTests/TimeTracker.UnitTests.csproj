@@ -64,15 +64,10 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Domain.Infrastructure\CommandBus.RegisterCommandHandler.feature.cs">
-      <DependentUpon>CommandBus.RegisterCommandHandler.feature</DependentUpon>
+    <Compile Include="Domain.Infrastructure\CommandBus.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Domain.Infrastructure\CommandBus.SendAsync.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandBus.SendAsync.feature</DependentUpon>
+      <DependentUpon>CommandBus.feature</DependentUpon>
     </Compile>
     <Compile Include="Domain.Infrastructure\Mapping.feature.cs">
       <AutoGen>True</AutoGen>
@@ -97,13 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Domain.Infrastructure\CommandBus.RegisterCommandHandler.feature">
+    <None Include="Domain.Infrastructure\CommandBus.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CommandBus.RegisterCommandHandler1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Domain.Infrastructure\CommandBus.SendAsync.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CommandBus.SendAsync.feature.cs</LastGenOutput>
+      <LastGenOutput>CommandBus.feature.cs</LastGenOutput>
     </None>
     <None Include="Domain.Infrastructure\Mapping.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

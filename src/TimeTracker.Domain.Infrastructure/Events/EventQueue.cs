@@ -1,23 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TimeTracker.Domain.Infrastructure.Events
 {
     public class EventQueue : IEventQueue
     {
-        public void Process()
+        public Task AddAsync(IEnumerable<IEvent> events)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task ProcessAsync()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task AddAsync(IEnumerable<IEvent> events)
-        {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
