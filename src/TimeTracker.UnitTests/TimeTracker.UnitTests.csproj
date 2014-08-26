@@ -69,12 +69,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandBus.feature</DependentUpon>
     </Compile>
+    <Compile Include="Domain.Infrastructure\EventQueue.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventQueue.feature</DependentUpon>
+    </Compile>
     <Compile Include="Domain.Infrastructure\Mapping.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Mapping.feature</DependentUpon>
     </Compile>
     <Compile Include="Domain.Infrastructure\Steps\CommandBusSteps.cs" />
+    <Compile Include="Domain.Infrastructure\Steps\EventQueueSteps.cs" />
     <Compile Include="Domain.Infrastructure\Steps\MappingSteps.cs" />
     <Compile Include="Support\Fakes\FakeEvent.cs" />
     <Compile Include="Support\Fakes\FakeCommand.cs" />
@@ -95,6 +101,10 @@
     <None Include="Domain.Infrastructure\CommandBus.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CommandBus.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Domain.Infrastructure\EventQueue.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EventQueue.feature.cs</LastGenOutput>
     </None>
     <None Include="Domain.Infrastructure\Mapping.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
