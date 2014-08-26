@@ -4,7 +4,6 @@ using TechTalk.SpecFlow;
 using TimeTracker.Domain.Aggregates.Customer;
 using TimeTracker.Domain.Aggregates.Customer.Commands;
 using TimeTracker.Domain.Aggregates.Customer.Views;
-using TimeTracker.Domain.Infrastructure;
 using TimeTracker.Domain.Infrastructure.Commands;
 using TimeTracker.Domain.Infrastructure.Events;
 
@@ -13,20 +12,28 @@ namespace TimeTracker.UnitTests.Domain.Aggregates.Steps
     [Binding]
     public class CustomerAggregateSteps
     {
-        private readonly ICommandBus Bus;
+        private readonly ICommandBus CommandBus;
         private readonly IEventQueue EventQueue;
         private readonly IEventStore EventStore;
         private readonly ICustomerViewRepository CustomerViewRepository;
+        private readonly CustomerCommandHandlers CustomerCommandHandlers;
         private CreateCustomer Command;
 
-        public CustomerAggregateSteps(ICommandBus bus, IEventQueue eventQueue, IEventStore eventStore, ICustomerViewRepository customerViewRepository)
+        public CustomerAggregateSteps(ICommandBus commandBus, IEventQueue eventQueue, IEventStore eventStore, ICustomerViewRepository customerViewRepository, CustomerCommandHandlers customerCommandHandlers)
         {
-            Bus = bus;
+            CommandBus = commandBus;
             EventQueue = eventQueue;
             EventStore = eventStore;
             CustomerViewRepository = customerViewRepository;
+            CustomerCommandHandlers = customerCommandHandlers;
         }
 
+        [Given(@"CreateCustomer command handler is registered with command bus")]
+        public void GivenCreateCustomerCommandHandlerIsRegisteredWithCommandBus()
+        {
+            CommandBus.RegisterCommandHandler((CreateCustomer command) => CustomerCommandHandlers.HandleCommand(command));
+        }
+        
         [When(@"I send a CreateCustomer command")]
         public void WhenISendACreateCustomerCommand()
         {
@@ -35,7 +42,7 @@ namespace TimeTracker.UnitTests.Domain.Aggregates.Steps
 
         private TCommand SendCommandAndProcessQueue<TCommand>(TCommand command) where TCommand : ICommand
         {
-            Bus.Send(command);
+            CommandBus.Send(command);
             EventQueue.Process();
 
             return command;

@@ -74,7 +74,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandBus.SendAsync.feature</DependentUpon>
     </Compile>
+    <Compile Include="Domain.Infrastructure\Mapping.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mapping.feature</DependentUpon>
+    </Compile>
     <Compile Include="Domain.Infrastructure\Steps\CommandBusSteps.cs" />
+    <Compile Include="Domain.Infrastructure\Steps\MappingSteps.cs" />
     <Compile Include="Support\Fakes\FakeEvent.cs" />
     <Compile Include="Support\Fakes\FakeCommand.cs" />
     <Compile Include="Support\Fakes\FakeEventQueue.cs" />
@@ -85,6 +91,7 @@
     </Compile>
     <Compile Include="Domain\Aggregates\Steps\CustomerAggregateSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\Fakes\Repositories\FakeRepository.cs" />
     <Compile Include="Support\IoC.cs" />
     <Compile Include="Support\Fakes\Repositories\FakeCustomerViewRepository.cs" />
   </ItemGroup>
@@ -97,6 +104,10 @@
     <None Include="Domain.Infrastructure\CommandBus.SendAsync.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CommandBus.SendAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Domain.Infrastructure\Mapping.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Mapping.feature.cs</LastGenOutput>
     </None>
     <None Include="Domain\Aggregates\CustomerAggregate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

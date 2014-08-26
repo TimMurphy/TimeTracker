@@ -7,6 +7,7 @@ using TechTalk.SpecFlow;
 using TimeTracker.Domain.Infrastructure.Commands;
 using TimeTracker.Domain.Infrastructure.Commands.Exceptions;
 using TimeTracker.Domain.Infrastructure.Events;
+using TimeTracker.Domain.Infrastructure.Support;
 using TimeTracker.UnitTests.Support.Fakes;
 
 namespace TimeTracker.UnitTests.Domain.Infrastructure.Steps
@@ -36,12 +37,7 @@ namespace TimeTracker.UnitTests.Domain.Infrastructure.Steps
             HandledCommands.Add(command);
             ReturnedEvents.Add(@event);
 
-            return Events(@event);
-        }
-
-        private Task<IEnumerable<IEvent>> Events(params IEvent[] events)
-        {
-            return Task.FromResult(events.AsEnumerable());
+            return Helper.Events(@event);
         }
 
         [When(@"SendAsync\(command\) is called")]

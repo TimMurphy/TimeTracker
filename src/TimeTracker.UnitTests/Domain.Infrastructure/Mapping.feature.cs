@@ -11,22 +11,22 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TimeTracker.UnitTests.Domain.Aggregates
+namespace TimeTracker.UnitTests.Domain_Infrastructure
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CustomerAggregateFeature : Xunit.IUseFixture<CustomerAggregateFeature.FixtureData>, System.IDisposable
+    public partial class MappingFeature : Xunit.IUseFixture<MappingFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CustomerAggregate.feature"
+#line 1 "Mapping.feature"
 #line hidden
         
-        public CustomerAggregateFeature()
+        public MappingFeature()
         {
             this.TestInitialize();
         }
@@ -34,7 +34,7 @@ namespace TimeTracker.UnitTests.Domain.Aggregates
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CustomerAggregate", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mapping", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,15 +63,7 @@ namespace TimeTracker.UnitTests.Domain.Aggregates
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 3
-#line 4
- testRunner.Given("CreateCustomer command handler is registered with command bus", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-        }
-        
-        public virtual void SetFixture(CustomerAggregateFeature.FixtureData fixtureData)
+        public virtual void SetFixture(MappingFeature.FixtureData fixtureData)
         {
         }
         
@@ -81,21 +73,23 @@ namespace TimeTracker.UnitTests.Domain.Aggregates
         }
         
         [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerAggregate")]
-        [Xunit.TraitAttribute("Description", "Create customer")]
-        public virtual void CreateCustomer()
+        [Xunit.TraitAttribute("FeatureTitle", "Mapping")]
+        [Xunit.TraitAttribute("Description", "MapTo - from.Map<To>()")]
+        public virtual void MapTo_From_MapTo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create customer", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("MapTo - from.Map<To>()", ((string[])(null)));
 #line 3
-this.FeatureBackground();
+this.ScenarioSetup(scenarioInfo);
+#line 4
+ testRunner.Given("from object has public properties", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+ testRunner.And("to class has public constructor with zero arguments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+ testRunner.And("to class has public constructor with one or more arguments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
- testRunner.When("I send a CreateCustomer command", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I call from.MapTo<To>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.Then("CustomerAggregate is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 9
- testRunner.And("CustomerView is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("to object is created via public constructor with arguments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -107,12 +101,12 @@ this.FeatureBackground();
             
             public FixtureData()
             {
-                CustomerAggregateFeature.FeatureSetup();
+                MappingFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CustomerAggregateFeature.FeatureTearDown();
+                MappingFeature.FeatureTearDown();
             }
         }
     }

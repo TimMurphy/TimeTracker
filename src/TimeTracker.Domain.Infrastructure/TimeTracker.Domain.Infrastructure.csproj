@@ -53,7 +53,9 @@
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\IEventStore.cs" />
     <Compile Include="Events\IEventQueue.cs" />
-    <Compile Include="Support\Mapping.cs" />
+    <Compile Include="Mapping\Mapper.cs" />
+    <Compile Include="Support\Helper.cs" />
+    <Compile Include="Mapping\Mapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

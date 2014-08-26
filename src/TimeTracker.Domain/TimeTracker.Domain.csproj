@@ -45,6 +45,7 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Aggregates\Customer\Commands\CreateCustomer.cs" />
+    <Compile Include="Aggregates\Customer\CustomerCommandHandlers.cs" />
     <Compile Include="Aggregates\Customer\Events\CreatedCustomer.cs" />
     <Compile Include="Aggregates\Customer\CustomerAggregate.cs" />
     <Compile Include="Aggregates\Customer\Exceptions\DuplicateCustomerNameException.cs" />

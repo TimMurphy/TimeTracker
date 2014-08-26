@@ -23,6 +23,7 @@ namespace TimeTracker.Domain.Infrastructure.Commands
             var events = await commandHandler(command);
 
 #pragma warning disable 4014
+            // todo: is this wise???
             EventQueue.AddAsync(events);
 #pragma warning restore 4014
         }
