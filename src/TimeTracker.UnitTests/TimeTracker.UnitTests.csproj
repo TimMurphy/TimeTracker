@@ -82,7 +82,7 @@
     <Compile Include="Domain.Infrastructure\Steps\CommandBusSteps.cs" />
     <Compile Include="Domain.Infrastructure\Steps\EventQueueSteps.cs" />
     <Compile Include="Domain.Infrastructure\Steps\MappingSteps.cs" />
-    <Compile Include="Support\Fakes\FakeEvent.cs" />
+    <Compile Include="Support\Dummies\DummyEvent.cs" />
     <Compile Include="Support\Fakes\FakeCommand.cs" />
     <Compile Include="Support\Fakes\FakeEventQueue.cs" />
     <Compile Include="Domain\Aggregates\CustomerAggregate.feature.cs">

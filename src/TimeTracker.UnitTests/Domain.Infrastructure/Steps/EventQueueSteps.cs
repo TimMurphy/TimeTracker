@@ -1,32 +1,38 @@
-﻿using TechTalk.SpecFlow;
+﻿using FluentAssertions;
+using TechTalk.SpecFlow;
+using TimeTracker.Domain.Infrastructure.Events;
+using TimeTracker.UnitTests.Support.Dummies;
 
 namespace TimeTracker.UnitTests.Domain.Infrastructure.Steps
 {
     [Binding]
     public class EventQueueSteps
     {
+        private EventQueue EventQueue;
+        private DummyEvent[] Events;
+
         [Given(@"an EventQueue")]
         public void GivenAnEventQueue()
         {
-            ScenarioContext.Current.Pending();
+            EventQueue = new EventQueue();
         }
 
-        [Given(@"I a collection of events")]
-        public void Given_I_A_CollectionOfEvents()
+        [Given(@"a collection of events")]
+        public void GivenACollectionOfEvents()
         {
-            ScenarioContext.Current.Pending();
+            Events = new[] { new DummyEvent(), new DummyEvent() };
         }
 
-        [When(@"I call AddAsync\(events\)")]
-        public void WhenICallAddAsyncEvents()
+        [When(@"AddAsync\(events\) is called")]
+        public void WhenAddAsyncEventsIsCalled()
         {
-            ScenarioContext.Current.Pending();
+            EventQueue.Add(Events);
         }
-
+        
         [Then(@"the events are added to the queue")]
         public void ThenTheEventsAreAddedToTheQueue()
         {
-            ScenarioContext.Current.Pending();
+            EventQueue.Queue.ShouldAllBeEquivalentTo(Events);
         }
     }
 }

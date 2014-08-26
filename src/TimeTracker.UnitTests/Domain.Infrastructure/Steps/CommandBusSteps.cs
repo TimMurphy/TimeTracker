@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using TechTalk.SpecFlow;
@@ -8,6 +7,7 @@ using TimeTracker.Domain.Infrastructure.Commands;
 using TimeTracker.Domain.Infrastructure.Commands.Exceptions;
 using TimeTracker.Domain.Infrastructure.Events;
 using TimeTracker.Domain.Infrastructure.Support;
+using TimeTracker.UnitTests.Support.Dummies;
 using TimeTracker.UnitTests.Support.Fakes;
 
 namespace TimeTracker.UnitTests.Domain.Infrastructure.Steps
@@ -32,7 +32,7 @@ namespace TimeTracker.UnitTests.Domain.Infrastructure.Steps
 
         private Task<IEnumerable<IEvent>> HandleCommand(FakeCommand command)
         {
-            var @event = new FakeEvent(command.AggregateId);
+            var @event = new DummyEvent(command.AggregateId);
 
             HandledCommands.Add(command);
             ReturnedEvents.Add(@event);
