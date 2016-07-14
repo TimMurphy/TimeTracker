@@ -23,7 +23,10 @@ namespace TimeTracker.Domain.Infrastructure.Events
 
         public Task ProcessAsync()
         {
-            throw new NotImplementedException();
+            /////////////////////////////////////////
+            // this is what i am working on
+            /////////////////////////////////////////
+            throw new NotImplementedException("this is what i am working on");
         }
 
         public void RegisterEventHandler(Action<IEvent> eventHandler)
